@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="form">
-        <form autocomplete="off">
+        <form autocomplete="off" id="myForm">
             <h1>Create an account</h1>
+            <div class="form-message"></div>
             <table>
                 <tr>
                     <td>
@@ -41,5 +43,38 @@
             </table>
         </form>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#myForm").on('submit',function(e){
+                e.preventDefault();
+                
+                $.ajax({
+                    type: "POST",
+                    url : "signup.php",
+                    data: new FormData (this),
+                    dataType: "json",
+                    contentType: false,
+                    cache : false,
+                    processData : false,
+
+                    success:function(response){
+                        $(".form-message");
+
+                        if(response.status == 1){
+                            $("#myForm")[0].reset(); //resets the form
+                            $(".form-message").html('<p>' + response.message + '</p>');
+                        }else{
+                            $(".form-message").html('<p>' + response.message + '</p>');
+                        }
+
+                    };
+                });
+            });
+        });
+
+
+    </script>
 </body>
 </html>
