@@ -15,37 +15,63 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <form method="post" action="login.php">
-        <input type="text" id="username" placeholder="Username..."> <br>
-        <input type="password" id="password" placeholder="Password..."> <br>
-        <input type="button" value="Log In" id="login">
+
+<style>
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body class="bg-[url('https://orig15.deviantart.net/45c6/f/2017/215/0/9/runcycle__gif__by_weilard-dbip9uq.gif')] bg-cover relative top-20">
+
+<div class="container opacity-80 ">
+     <h1 class="text-9xl font-black text-gray-200 text-right leading-10 tracking-widest absolute top-[100px] left-[350px]">Run Your </h1> <br>
+        <h1 class="text-gray-200 text-8xl absolute top-[170px] left-[400px] font-black">Experiences</h1>
 
     
-    </form>  
+    <form method="post" action="login.php" class="absolute top-[300px] left-[400px]">
+        <input type="text" id="username" placeholder="Username..."
+            class="w-[600px] px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"> <br>
+        <input type="password" id="password" placeholder="Password..."
+            class="w-[600px] px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 mt-[10px]"> <br> <br> <br>
+    <a href="regist.php" class="text-base text-gray-100">do not have an account yet?</a>
+</div>
+
+        <input type="button" value="Log In" id="login"
+            class="px-5 py-1 mt-4  mb-5 absolute top-[380px] left-[400px] text-white bg-[#425F57] rounded-lg hover:bg-[#749F82] opacity-100 w-[600px]"> <br>
+    
+    </form>
 
     <p id="response"></p>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        $(document).ready(function (){
-            $("#login").on('click', function(){
+        $(document).ready(function () {
+            $("#login").on('click', function () {
                 var username = $("#username").val();
                 var password = $("#password").val();
 
-                if ( username == "" || password == "")
-                alert('Please check your inputs');
-                else{
-                    
-                $.ajax(
-                    {
+                if (username == "" || password == "")
+                    swal({
+                        title: "Failed",
+                        text: "Please Check Your Inputs!",
+                        icon: "warning",
+                        button: "try again",
+                    });
+                else {
+
+                    $.ajax({
                         url: 'login.php',
                         method: 'POST',
                         data: {
@@ -53,12 +79,11 @@
                             usernamePHP: username,
                             passwordPHP: password
                         },
-                        success : function (response) {
+                        success: function (response) {
                             $("#response").html(response);
                         },
-                        dataType : 'text '
-                    }
-                )
+                        dataType: 'text '
+                    })
                 }
 
 
@@ -66,4 +91,5 @@
         })
     </script>
 </body>
+
 </html>

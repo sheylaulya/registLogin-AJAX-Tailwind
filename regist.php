@@ -37,7 +37,7 @@
     class="bg-[url('https://img.freepik.com/free-vector/cartoon-jungle-background_23-2148962077.jpg?w=1800&t=st=1665457262~exp=1665457862~hmac=486f95b18fa307f36155f03bd4c3801e253eb38dc46ad905359ec1d4acad0ff8')]">
     <div
         class="bg w-[450px] h-[580px] bg-[#42855B] mx-auto mt-[100px] rounded-2xl flex flex-col justify-center items-center">
-        <div class="text-title text-center mt-[20px] mb-[20px] text-3xl font-bold tracking-widest text-[#FAF7F0]">
+        <div class="text-title text-center mt-[20px] mb-[20px] text-xl font-bold tracking-widest text-[#FAF7F0]">
             <h5>Create an account</h5>
         </div>
 
