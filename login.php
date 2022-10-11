@@ -33,7 +33,7 @@
 <body class="bg-[url('https://orig15.deviantart.net/45c6/f/2017/215/0/9/runcycle__gif__by_weilard-dbip9uq.gif')] bg-cover relative top-20">
 
 <div class="container opacity-80 ">
-     <h1 class="text-9xl font-black text-gray-200 text-right leading-10 tracking-widest absolute top-[100px] left-[350px]">Run Your </h1> <br>
+     <h1 class="text-9xl font-black text-gray-200 text-right leading-10 tracking-widest absolute top-[100px] left-[350px] ">Run Your </h1> <br>
         <h1 class="text-gray-200 text-8xl absolute top-[170px] left-[400px] font-black">Experiences</h1>
 
     
