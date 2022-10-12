@@ -34,55 +34,66 @@
     }
 </style>
 
-<body>
-    <div class="container">
-        <div class="content w-1/2 h-screen bg-[#EEEEEE] flex flex-col gap-10 justify-center items-center" >
-            <h5 class="block text-lg text-[#222831] font-bold tracking-wide text-3xl">Create an account</h5>
+<body class="bg-[#0F1123]">
 
-            <form autocomplete="off" action="" method="post">
-                <div class="firstName">
-                    <label for="" class="block text-lg text-[#222831] font-bold tracking-wide'">First
-                        Name</label>
-                    <input type="text" id="firstName" value=""
-                        class="w-96 px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+    <div class="container ">
+        <div
+            class="content w-[1300px] h-[650px] bg-[#000000] bg-opacity-40 flex flex-col gap-3 justify-center items-start relative top-[50px] left-[70px] pl-24 rounded-2xl shadow-[0_10px_20px_rgba(253,_95,_0,_1)] ">
+            <h5 class="block text-lg text-[#FF4C29] font-bold tracking-widest text-3xl">Create an account</h5>
+
+            <form autocomplete="off" action="" method="post" class="mt-8">
+
+                <div class="name flex gap-5">
+                    <div class="firstName">
+                        <label for="" class="block text-lg text-[#C84B31] font-bold tracking-wide'">First
+                            Name</label>
+                        <input type="text" id="firstName" value=""
+                            class="w-72 px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    </div>
+                    <div class="lastName">
+                        <label for="" class="block text-lg  text-[#C84B31]  font-bold tracking-wide">Last Name</label>
+                        <input type="text" id="lastName" value=""
+                            class="w-72 px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                    </div>
                 </div>
-                <div class="lastName">
-                    <label for="" class="block text-lg  text-[#222831]  font-bold tracking-wide">Last Name</label>
-                    <input type="text" id="lastName" value=""
-                        class="w-96 px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
-                </div>
+
                 <div class="email">
-                    <label for="" class="block text-lg text-[#222831]  font-bold tracking-wide">Email</label>
+                    <label for="" class="block text-lg text-[#C84B31]  font-bold tracking-wide">Email</label>
                     <input type="text" id="email" value=""
-                        class="w-96 px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        class="w-[600px] px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
                 <div class="username">
-                    <label for="" class="block text-lg text-[#222831]  font-bold tracking-wide">Username</label>
+                    <label for="" class="block text-lg text-[#C84B31]  font-bold tracking-wide">Username</label>
                     <input type="text" id="username" value=""
-                        class="w-96 px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        class="w-[600px] px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
                 <div class="password">
-                    <label for="" class="block text-lg text-[#222831]  font-bold tracking-wide">Password</label>
+                    <label for="" class="block text-lg text-[#C84B31]  font-bold tracking-wide">Password</label>
                     <input type="password" id="password" value=""
-                        class="w-96 px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                        class="w-[600px] px-4 py-1 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
 
-                <input type="button" value="regist" id="regist"
-                    class="px-5 py-1 mt-4  mb-5 text-white bg-[#425F57] rounded-lg hover:bg-[#749F82]">
-                <input type="reset" value="reset"
-                    class="px-5 py-1 mt-4  mb-5 text-white bg-[#E26868] rounded-lg hover:bg-[#749F82]">
+                <div class="btn flex gap-3">
+                    <input type="button" value="submit" id="regist"
+                    class="text-white bg-gradient-to-br from-[#FD841F] to-[#CD104D] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-10 h-[35px] text-center mr-2 mb-2 mt-4">
+                    <input type="reset" value="reset"
+                        class="text-white bg-gradient-to-br from-[#FD841F] to-[#CD104D] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-10 h-[35px] text-center mr-2 mb-2 mt-4">
+                </div>
+
             </form>
 
-            <a href="login.php" class="block text-lg text-[#222831]  font-bold tracking-wide  ">Have an account already?
-                Sign
-                In</a>
+            <p class="block text-mg font-xl tracking-wide text-gray-200 opacity-70">Have an account already?
+                <span> <a href="login.php" class="text-[#C84B31]">Sign In</a> </span></p>
 
             <p id="response"></p>
+            <lottie-player src="https://lottie.host/30a59977-5093-4fe2-8994-f70593bc211e/pFTTfXJNCo.json"
+                background="transparent" speed="0.7" style="width: 550px; height: 550px;" loop autoplay
+                class="absolute left-[700px]"></lottie-player>
         </div>
-
     </div>
 
     <!-- SCRIPT -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
