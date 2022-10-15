@@ -10,7 +10,7 @@
 
         $data = $connec->query(query: "INSERT INTO `user` VALUES ('NULL','$firstName','$lastName','$email','$username','$password')");
         if  ($data) {
-            exit('Login success...');
+            exit('Registration success...');
         }else
             exit('failed, try again...');
     }
@@ -130,6 +130,7 @@
                         },
                         success: function (response) {
                             $("#response").html(response);
+
                         },
                         dataType: 'text '
                     })

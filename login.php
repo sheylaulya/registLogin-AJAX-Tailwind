@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if(isset($_SESSION['loggedIN'])){
+    header('Location: LS.php');
+    exit();
+}
     if(isset($_POST['login'])){
         $connec = new mysqli('localhost','root','','registlogin');
 
@@ -7,9 +13,12 @@
 
         $data = $connec->query(query: "SELECT id FROM user WHERE username='$username' AND password='$password'");
         if  ($data-> num_rows > 0) {
+            $_SESSION['loggedIN'] = '1';
+            $_SESSION['username'] = $username;
             exit('Login success...');
         }else
             exit('failed, try again...');
+            
     }
 ?>
 
@@ -113,6 +122,10 @@
                         },
                         success: function (response) {
                             $("#response").html(response);
+
+                            
+                            if(response.indexOf('success') >= 0)
+                            window.location = 'LS.php';
                         },
                         dataType: 'text '
                     })
